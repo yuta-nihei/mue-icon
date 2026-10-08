@@ -1,5 +1,7 @@
 # mue-icons
 
+🇬🇧 [English version below](#english)
+
 印鑑、帳票、地図記号、医療、金融、ゴミ分別など、**日本の暮らしや仕事で使うアイコン**を集めた SVG アイコンライブラリです。MIT ライセンス。
 
 - 🇯🇵 日本ならではのモチーフ(はんこ、鳥居、お守り、〒、燃えるゴミ、請求書、診察券…)
@@ -147,5 +149,159 @@ pnpm -r publish --access public
 WordPress プラグインは `pnpm build` 後に `packages/wordpress/mue-icons` を zip にして配布します(`assets/` は生成物です)。
 
 ## ライセンス
+
+[MIT](LICENSE)
+
+---
+
+<a id="english"></a>
+
+# mue-icons (English)
+
+An SVG icon library of **icons for Japanese daily life and work**: name seals, business forms, map symbols, medical, finance, garbage sorting and more. MIT licensed.
+
+- 🇯🇵 Distinctly Japanese motifs (hanko, torii, omamori, postal mark 〒, burnable trash, invoice, clinic card…)
+- 🎨 One consistent spec (24px grid, 1.5 stroke width, rounded corners)
+- 🌓 Two styles: **line** and **duotone**
+- 🌈 Colors use `currentColor`, so icons follow the text color and work well with dark mode
+- 📦 Supports React / Vue 3 / plain JavaScript / SVG sprite / WordPress
+- 🌲 Only the icons you use are bundled (tree-shakable)
+
+> Currently **v0.1.0** with 40 icons. More will be added over time.
+
+## Installation
+
+Install whichever one fits your environment.
+
+| Usage | Package | Install |
+|---|---|---|
+| React (17+) | `mue-icons-react` | `npm install mue-icons-react` |
+| Vue 3 | `mue-icons-vue` | `npm install mue-icons-vue` |
+| No framework | `mue-icons` | `npm install mue-icons` |
+| SVG sprite (`<use>`) | `mue-icons-sprite` | `npm install mue-icons-sprite` |
+| WordPress | Plugin | See "WordPress" below |
+
+ESM only.
+
+## Usage
+
+### React
+
+```jsx
+import { HankoIcon, ToriiIcon } from 'mue-icons-react';
+
+<HankoIcon size={32} variant="duotone" title="Name seal" />
+<ToriiIcon />
+```
+
+Component names are the icon name in PascalCase plus `Icon` (`trash-burnable` → `TrashBurnableIcon`).
+
+### Vue 3
+
+```vue
+<script setup>
+import { InvoiceIcon } from 'mue-icons-vue';
+</script>
+
+<template>
+  <InvoiceIcon :size="24" variant="duotone" title="Invoice" />
+</template>
+```
+
+### Without a framework
+
+```js
+import { bank } from 'mue-icons';
+import { renderSvg } from 'mue-icons/runtime';
+
+el.innerHTML = renderSvg(bank, { variant: 'line', size: 24, title: 'Bank' });
+```
+
+Icon data names are camelCase (`trash-burnable` → `trashBurnable`).
+
+### SVG sprite
+
+```html
+<svg width="24" height="24" aria-hidden="true">
+  <use href="/sprite.svg#mue-hanko-line" />
+</svg>
+```
+
+Copy `mue-icons-sprite/sprite.svg` into your served directory. IDs are `mue-<icon-name>-<line|duotone>`.
+
+### WordPress
+
+Place the plugin (`packages/wordpress/mue-icons`) in `wp-content/plugins/` and activate it to use the shortcode:
+
+```
+[mue_icon name="hanko" variant="duotone" size="32" label="Name seal"]
+```
+
+## Options
+
+| Option | Description | Default |
+|---|---|---|
+| `size` | Width and height (px) | `24` |
+| `variant` | `line` or `duotone` | `line` |
+| `title` (`label` in WordPress) | Name of the icon. When set, it is exposed to screen readers | none |
+
+- Color follows the parent element's `color`; change it with CSS.
+- The duotone secondary (fill) color can be changed with the CSS variable `--icon-secondary`. If unset, it is a lighter tint of the primary color.
+
+  ```css
+  .icon { color: #1d4ed8; --icon-secondary: #f59e0b; }
+  ```
+
+- With `title`, the icon gets `role="img"` and an accessible name; without it, it is treated as decorative (`aria-hidden`). Add `title` to icons that carry meaning.
+
+## Icon list
+
+| Category | Icon names |
+|---|---|
+| Japanese culture | `hanko` `torii` `sakura` `fuji` `omamori` `sensu` `chochin` |
+| Documents | `invoice` `application` `receipt` `contract` `envelope` `certificate` |
+| Map symbols | `map-koban` `map-post-office` `map-hospital` `map-school` `map-temple` `map-shrine` `map-city-hall` |
+| Medical | `stethoscope` `prescription` `syringe` `pill` `thermometer` `karte` |
+| Finance | `bank` `promissory-note` `yen-coin` `wallet` `credit-card` `chart-line` `passbook` |
+| Life | `trash-burnable` `trash-non-burnable` `trash-recyclable` `trash-hazardous` `trash-oversized` `plastic-mark` `postal-code` |
+
+The preview image can be regenerated with `pnpm preview` (`docs/preview.svg`). Update it when adding icons.
+
+For a searchable preview, run `pnpm build` and open `site/index.html` (searchable by Japanese and English tags).
+
+## About map symbols and official marks
+
+Icons such as `map-*`, garbage sorting and the plastic mark are **original designs inspired by** official symbols. They are not copies of the figure data defined by public agencies. If you need to use official symbols (e.g. from the Geospatial Information Authority of Japan) accurately, check each agency's terms of use.
+
+## Versioning and compatibility
+
+- Follows [SemVer](https://semver.org/). All packages are released together at the same version.
+- Icons and styles are **removed only in major versions**.
+- When an icon is renamed, the old name keeps working, so updates won't break your code.
+
+## Contributing
+
+Contributions of new icons and fixes are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) for the design spec and workflow. `pnpm lint` checks the rules automatically.
+
+```bash
+pnpm install
+pnpm test      # lint + build + generated-output tests
+pnpm compat    # backward-compatibility check
+```
+
+- Source icons live in `svg/<line|duotone>/<name>.svg`, metadata in `icons.json`. `dist/` and `site/` are generated.
+
+## For maintainers: release steps
+
+```bash
+pnpm version:set 0.2.0   # align the version across all packages and the WordPress plugin
+pnpm test && pnpm compat
+pnpm compat:update       # record this release in the snapshot
+pnpm -r publish --access public
+```
+
+For the WordPress plugin, zip `packages/wordpress/mue-icons` after `pnpm build` (`assets/` is generated).
+
+## License
 
 [MIT](LICENSE)
