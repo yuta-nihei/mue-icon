@@ -3,79 +3,720 @@
   "icons": {
     "hanko": {
       "category": "japan",
-      "tags": { "ja": ["印鑑", "判子", "はんこ", "押印", "認印"], "en": ["seal", "stamp", "signature"] },
+      "tags": {
+        "ja": [
+          "印鑑",
+          "判子",
+          "はんこ",
+          "押印",
+          "認印"
+        ],
+        "en": [
+          "seal",
+          "stamp",
+          "signature"
+        ]
+      },
       "since": "0.1.0",
-      "variants": ["line", "duotone"],
-      "aliases": ["stamp"]
+      "variants": [
+        "line",
+        "duotone"
+      ],
+      "aliases": [
+        "stamp"
+      ]
     },
     "torii": {
       "category": "japan",
-      "tags": { "ja": ["鳥居", "神社", "初詣"], "en": ["shrine", "gate", "shinto"] },
+      "tags": {
+        "ja": [
+          "鳥居",
+          "神社",
+          "初詣"
+        ],
+        "en": [
+          "shrine",
+          "gate",
+          "shinto"
+        ]
+      },
       "since": "0.1.0",
-      "variants": ["line", "duotone"],
+      "variants": [
+        "line",
+        "duotone"
+      ],
       "aliases": []
     },
     "invoice": {
       "category": "document",
-      "tags": { "ja": ["請求書", "帳票", "インボイス", "円"], "en": ["bill", "yen", "receipt"] },
+      "tags": {
+        "ja": [
+          "請求書",
+          "帳票",
+          "インボイス",
+          "円"
+        ],
+        "en": [
+          "bill",
+          "yen",
+          "receipt"
+        ]
+      },
       "since": "0.1.0",
-      "variants": ["line", "duotone"],
+      "variants": [
+        "line",
+        "duotone"
+      ],
       "aliases": []
     },
     "application": {
       "category": "document",
-      "tags": { "ja": ["申請書", "申込", "届出", "承認"], "en": ["form", "approval", "request"] },
+      "tags": {
+        "ja": [
+          "申請書",
+          "申込",
+          "届出",
+          "承認"
+        ],
+        "en": [
+          "form",
+          "approval",
+          "request"
+        ]
+      },
       "since": "0.1.0",
-      "variants": ["line", "duotone"],
+      "variants": [
+        "line",
+        "duotone"
+      ],
       "aliases": []
     },
     "map-koban": {
       "category": "map",
-      "tags": { "ja": ["交番", "警察", "地図記号"], "en": ["police box", "map symbol"] },
+      "tags": {
+        "ja": [
+          "交番",
+          "警察",
+          "地図記号"
+        ],
+        "en": [
+          "police box",
+          "map symbol"
+        ]
+      },
       "since": "0.1.0",
-      "variants": ["line", "duotone"],
+      "variants": [
+        "line",
+        "duotone"
+      ],
       "aliases": []
     },
     "map-post-office": {
       "category": "map",
-      "tags": { "ja": ["郵便局", "郵便", "地図記号"], "en": ["post office", "mail", "map symbol"] },
+      "tags": {
+        "ja": [
+          "郵便局",
+          "郵便",
+          "地図記号"
+        ],
+        "en": [
+          "post office",
+          "mail",
+          "map symbol"
+        ]
+      },
       "since": "0.1.0",
-      "variants": ["line", "duotone"],
+      "variants": [
+        "line",
+        "duotone"
+      ],
       "aliases": []
     },
     "map-hospital": {
       "category": "map",
-      "tags": { "ja": ["病院", "医療", "地図記号"], "en": ["hospital", "clinic", "map symbol"] },
+      "tags": {
+        "ja": [
+          "病院",
+          "医療",
+          "地図記号"
+        ],
+        "en": [
+          "hospital",
+          "clinic",
+          "map symbol"
+        ]
+      },
       "since": "0.1.0",
-      "variants": ["line", "duotone"],
+      "variants": [
+        "line",
+        "duotone"
+      ],
       "aliases": []
     },
     "stethoscope": {
       "category": "medical",
-      "tags": { "ja": ["聴診器", "診察", "医師"], "en": ["doctor", "checkup", "clinic"] },
+      "tags": {
+        "ja": [
+          "聴診器",
+          "診察",
+          "医師"
+        ],
+        "en": [
+          "doctor",
+          "checkup",
+          "clinic"
+        ]
+      },
       "since": "0.1.0",
-      "variants": ["line", "duotone"],
+      "variants": [
+        "line",
+        "duotone"
+      ],
       "aliases": []
     },
     "prescription": {
       "category": "medical",
-      "tags": { "ja": ["処方箋", "薬", "調剤"], "en": ["rx", "medicine", "pharmacy"] },
+      "tags": {
+        "ja": [
+          "処方箋",
+          "薬",
+          "調剤"
+        ],
+        "en": [
+          "rx",
+          "medicine",
+          "pharmacy"
+        ]
+      },
       "since": "0.1.0",
-      "variants": ["line", "duotone"],
+      "variants": [
+        "line",
+        "duotone"
+      ],
       "aliases": []
     },
     "bank": {
       "category": "finance",
-      "tags": { "ja": ["銀行", "金融機関", "振込"], "en": ["finance", "transfer", "institution"] },
+      "tags": {
+        "ja": [
+          "銀行",
+          "金融機関",
+          "振込"
+        ],
+        "en": [
+          "finance",
+          "transfer",
+          "institution"
+        ]
+      },
       "since": "0.1.0",
-      "variants": ["line", "duotone"],
+      "variants": [
+        "line",
+        "duotone"
+      ],
       "aliases": []
     },
     "promissory-note": {
       "category": "finance",
-      "tags": { "ja": ["手形", "小切手", "証書"], "en": ["bill of exchange", "cheque", "note"] },
+      "tags": {
+        "ja": [
+          "手形",
+          "小切手",
+          "証書"
+        ],
+        "en": [
+          "bill of exchange",
+          "cheque",
+          "note"
+        ]
+      },
       "since": "0.1.0",
-      "variants": ["line", "duotone"],
+      "variants": [
+        "line",
+        "duotone"
+      ],
+      "aliases": []
+    },
+    "sakura": {
+      "category": "japan",
+      "tags": {
+        "ja": [
+          "桜",
+          "さくら",
+          "花見",
+          "春"
+        ],
+        "en": [
+          "cherry blossom",
+          "spring",
+          "flower"
+        ]
+      },
+      "since": "0.2.0",
+      "variants": [
+        "line",
+        "duotone"
+      ],
+      "aliases": []
+    },
+    "fuji": {
+      "category": "japan",
+      "tags": {
+        "ja": [
+          "富士山",
+          "山",
+          "霊峰"
+        ],
+        "en": [
+          "mount fuji",
+          "mountain",
+          "japan"
+        ]
+      },
+      "since": "0.2.0",
+      "variants": [
+        "line",
+        "duotone"
+      ],
+      "aliases": []
+    },
+    "omamori": {
+      "category": "japan",
+      "tags": {
+        "ja": [
+          "お守り",
+          "おまもり",
+          "御守",
+          "神社",
+          "寺"
+        ],
+        "en": [
+          "charm",
+          "amulet",
+          "talisman"
+        ]
+      },
+      "since": "0.2.0",
+      "variants": [
+        "line",
+        "duotone"
+      ],
+      "aliases": []
+    },
+    "sensu": {
+      "category": "japan",
+      "tags": {
+        "ja": [
+          "扇子",
+          "せんす",
+          "扇",
+          "和"
+        ],
+        "en": [
+          "folding fan",
+          "fan",
+          "japanese"
+        ]
+      },
+      "since": "0.2.0",
+      "variants": [
+        "line",
+        "duotone"
+      ],
+      "aliases": []
+    },
+    "chochin": {
+      "category": "japan",
+      "tags": {
+        "ja": [
+          "提灯",
+          "ちょうちん",
+          "祭り",
+          "灯り"
+        ],
+        "en": [
+          "lantern",
+          "festival",
+          "paper lantern"
+        ]
+      },
+      "since": "0.2.0",
+      "variants": [
+        "line",
+        "duotone"
+      ],
+      "aliases": []
+    },
+    "receipt": {
+      "category": "document",
+      "tags": {
+        "ja": [
+          "レシート",
+          "領収書",
+          "領収証",
+          "明細"
+        ],
+        "en": [
+          "receipt",
+          "bill",
+          "slip"
+        ]
+      },
+      "since": "0.2.0",
+      "variants": [
+        "line",
+        "duotone"
+      ],
+      "aliases": []
+    },
+    "contract": {
+      "category": "document",
+      "tags": {
+        "ja": [
+          "契約書",
+          "契約",
+          "署名",
+          "同意書"
+        ],
+        "en": [
+          "contract",
+          "agreement",
+          "signature"
+        ]
+      },
+      "since": "0.2.0",
+      "variants": [
+        "line",
+        "duotone"
+      ],
+      "aliases": []
+    },
+    "envelope": {
+      "category": "document",
+      "tags": {
+        "ja": [
+          "封筒",
+          "郵便",
+          "手紙",
+          "通知"
+        ],
+        "en": [
+          "envelope",
+          "mail",
+          "letter"
+        ]
+      },
+      "since": "0.2.0",
+      "variants": [
+        "line",
+        "duotone"
+      ],
+      "aliases": []
+    },
+    "certificate": {
+      "category": "document",
+      "tags": {
+        "ja": [
+          "証明書",
+          "賞状",
+          "認定",
+          "修了証"
+        ],
+        "en": [
+          "certificate",
+          "diploma",
+          "award"
+        ]
+      },
+      "since": "0.2.0",
+      "variants": [
+        "line",
+        "duotone"
+      ],
+      "aliases": []
+    },
+    "map-school": {
+      "category": "map",
+      "tags": {
+        "ja": [
+          "学校",
+          "文",
+          "地図記号",
+          "小学校"
+        ],
+        "en": [
+          "school",
+          "map symbol"
+        ]
+      },
+      "since": "0.2.0",
+      "variants": [
+        "line",
+        "duotone"
+      ],
+      "aliases": []
+    },
+    "map-temple": {
+      "category": "map",
+      "tags": {
+        "ja": [
+          "寺院",
+          "お寺",
+          "卍",
+          "地図記号"
+        ],
+        "en": [
+          "temple",
+          "buddhist",
+          "map symbol"
+        ]
+      },
+      "since": "0.2.0",
+      "variants": [
+        "line",
+        "duotone"
+      ],
+      "aliases": []
+    },
+    "map-shrine": {
+      "category": "map",
+      "tags": {
+        "ja": [
+          "神社",
+          "鳥居",
+          "地図記号"
+        ],
+        "en": [
+          "shrine",
+          "torii",
+          "map symbol"
+        ]
+      },
+      "since": "0.2.0",
+      "variants": [
+        "line",
+        "duotone"
+      ],
+      "aliases": []
+    },
+    "map-city-hall": {
+      "category": "map",
+      "tags": {
+        "ja": [
+          "市役所",
+          "役所",
+          "行政",
+          "地図記号"
+        ],
+        "en": [
+          "city hall",
+          "government",
+          "map symbol"
+        ]
+      },
+      "since": "0.2.0",
+      "variants": [
+        "line",
+        "duotone"
+      ],
+      "aliases": []
+    },
+    "syringe": {
+      "category": "medical",
+      "tags": {
+        "ja": [
+          "注射",
+          "注射器",
+          "予防接種",
+          "ワクチン"
+        ],
+        "en": [
+          "syringe",
+          "injection",
+          "vaccine"
+        ]
+      },
+      "since": "0.2.0",
+      "variants": [
+        "line",
+        "duotone"
+      ],
+      "aliases": []
+    },
+    "pill": {
+      "category": "medical",
+      "tags": {
+        "ja": [
+          "錠剤",
+          "カプセル",
+          "薬",
+          "服薬"
+        ],
+        "en": [
+          "pill",
+          "capsule",
+          "medicine"
+        ]
+      },
+      "since": "0.2.0",
+      "variants": [
+        "line",
+        "duotone"
+      ],
+      "aliases": []
+    },
+    "thermometer": {
+      "category": "medical",
+      "tags": {
+        "ja": [
+          "体温計",
+          "体温",
+          "発熱",
+          "検温"
+        ],
+        "en": [
+          "thermometer",
+          "temperature",
+          "fever"
+        ]
+      },
+      "since": "0.2.0",
+      "variants": [
+        "line",
+        "duotone"
+      ],
+      "aliases": []
+    },
+    "karte": {
+      "category": "medical",
+      "tags": {
+        "ja": [
+          "カルテ",
+          "診療録",
+          "問診",
+          "診察券"
+        ],
+        "en": [
+          "medical record",
+          "chart",
+          "clipboard"
+        ]
+      },
+      "since": "0.2.0",
+      "variants": [
+        "line",
+        "duotone"
+      ],
+      "aliases": []
+    },
+    "yen-coin": {
+      "category": "finance",
+      "tags": {
+        "ja": [
+          "円",
+          "硬貨",
+          "通貨",
+          "小銭"
+        ],
+        "en": [
+          "yen",
+          "coin",
+          "currency"
+        ]
+      },
+      "since": "0.2.0",
+      "variants": [
+        "line",
+        "duotone"
+      ],
+      "aliases": []
+    },
+    "wallet": {
+      "category": "finance",
+      "tags": {
+        "ja": [
+          "財布",
+          "支払い",
+          "ウォレット",
+          "残高"
+        ],
+        "en": [
+          "wallet",
+          "payment",
+          "balance"
+        ]
+      },
+      "since": "0.2.0",
+      "variants": [
+        "line",
+        "duotone"
+      ],
+      "aliases": []
+    },
+    "credit-card": {
+      "category": "finance",
+      "tags": {
+        "ja": [
+          "クレジットカード",
+          "カード",
+          "決済",
+          "キャッシュレス"
+        ],
+        "en": [
+          "credit card",
+          "card",
+          "cashless"
+        ]
+      },
+      "since": "0.2.0",
+      "variants": [
+        "line",
+        "duotone"
+      ],
+      "aliases": []
+    },
+    "chart-line": {
+      "category": "finance",
+      "tags": {
+        "ja": [
+          "グラフ",
+          "株価",
+          "推移",
+          "売上"
+        ],
+        "en": [
+          "chart",
+          "stock",
+          "trend"
+        ]
+      },
+      "since": "0.2.0",
+      "variants": [
+        "line",
+        "duotone"
+      ],
+      "aliases": []
+    },
+    "passbook": {
+      "category": "finance",
+      "tags": {
+        "ja": [
+          "通帳",
+          "預金",
+          "貯金",
+          "口座"
+        ],
+        "en": [
+          "passbook",
+          "savings",
+          "account book"
+        ]
+      },
+      "since": "0.2.0",
+      "variants": [
+        "line",
+        "duotone"
+      ],
       "aliases": []
     }
   }
