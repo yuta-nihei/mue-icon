@@ -17,7 +17,7 @@ export const ROOT_ATTRS = {
   'stroke-linejoin': 'round',
 };
 export const VARIANTS = ['line', 'duotone'];
-export const CATEGORIES = ['japan', 'document', 'map', 'medical', 'finance'];
+export const CATEGORIES = ['japan', 'document', 'map', 'medical', 'finance', 'life'];
 export const NAME_RE = /^[a-z][a-z0-9]*(-[a-z0-9]+)*$/;
 
 export const readJson = (rel) => JSON.parse(readFileSync(join(ROOT, rel), 'utf8'));

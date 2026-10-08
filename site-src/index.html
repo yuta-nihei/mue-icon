@@ -44,7 +44,7 @@
 <div id="toast" role="status"></div>
 <script>
 const ICONS = /*ICONS_JSON*/[];
-const LABELS = { japan:'日本の文物', document:'帳票', map:'地図記号', medical:'医療', finance:'金融' };
+const LABELS = { japan:'日本の文物', document:'帳票', map:'地図記号', medical:'医療', finance:'金融', life:'生活' };
 const $ = (id) => document.getElementById(id);
 for (const c of [...new Set(ICONS.map((i) => i.category))]) $('cat').add(new Option(LABELS[c] ?? c, c));
 function render() {
