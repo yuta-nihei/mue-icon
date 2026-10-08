@@ -718,6 +718,159 @@
         "duotone"
       ],
       "aliases": []
+    },
+    "trash-burnable": {
+      "category": "life",
+      "tags": {
+        "ja": [
+          "燃えるゴミ",
+          "可燃ごみ",
+          "生ごみ",
+          "ゴミ出し"
+        ],
+        "en": [
+          "burnable trash",
+          "combustible waste",
+          "garbage"
+        ]
+      },
+      "since": "0.1.0",
+      "variants": [
+        "line",
+        "duotone"
+      ],
+      "aliases": []
+    },
+    "trash-non-burnable": {
+      "category": "life",
+      "tags": {
+        "ja": [
+          "燃えないゴミ",
+          "不燃ごみ",
+          "ガラス",
+          "陶器"
+        ],
+        "en": [
+          "non-burnable trash",
+          "non-combustible waste",
+          "glass"
+        ]
+      },
+      "since": "0.1.0",
+      "variants": [
+        "line",
+        "duotone"
+      ],
+      "aliases": []
+    },
+    "trash-recyclable": {
+      "category": "life",
+      "tags": {
+        "ja": [
+          "資源ゴミ",
+          "リサイクル",
+          "資源回収"
+        ],
+        "en": [
+          "recyclables",
+          "recycling",
+          "resource waste"
+        ]
+      },
+      "since": "0.1.0",
+      "variants": [
+        "line",
+        "duotone"
+      ],
+      "aliases": []
+    },
+    "trash-hazardous": {
+      "category": "life",
+      "tags": {
+        "ja": [
+          "有害ゴミ",
+          "危険ごみ",
+          "電池",
+          "蛍光灯"
+        ],
+        "en": [
+          "hazardous waste",
+          "battery disposal",
+          "warning"
+        ]
+      },
+      "since": "0.1.0",
+      "variants": [
+        "line",
+        "duotone"
+      ],
+      "aliases": []
+    },
+    "trash-oversized": {
+      "category": "life",
+      "tags": {
+        "ja": [
+          "粗大ゴミ",
+          "処理券",
+          "粗大ごみ受付券",
+          "シール"
+        ],
+        "en": [
+          "bulky waste",
+          "disposal ticket",
+          "oversized trash"
+        ]
+      },
+      "since": "0.1.0",
+      "variants": [
+        "line",
+        "duotone"
+      ],
+      "aliases": []
+    },
+    "plastic-mark": {
+      "category": "life",
+      "tags": {
+        "ja": [
+          "プラマーク",
+          "プラスチック製容器包装",
+          "プラごみ",
+          "容器包装"
+        ],
+        "en": [
+          "plastic packaging",
+          "plastic recycling mark",
+          "container"
+        ]
+      },
+      "since": "0.1.0",
+      "variants": [
+        "line",
+        "duotone"
+      ],
+      "aliases": []
+    },
+    "postal-code": {
+      "category": "life",
+      "tags": {
+        "ja": [
+          "〒",
+          "郵便番号",
+          "ゆうびん",
+          "住所"
+        ],
+        "en": [
+          "postal code",
+          "zip code",
+          "postcode"
+        ]
+      },
+      "since": "0.1.0",
+      "variants": [
+        "line",
+        "duotone"
+      ],
+      "aliases": []
     }
   }
 }

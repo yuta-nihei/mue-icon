@@ -8,6 +8,7 @@
     "lint": "node scripts/lint.mjs",
     "build": "node scripts/lint.mjs && node scripts/build.mjs",
     "test": "node scripts/build.mjs && node --test \"test/*.test.mjs\"",
+    "preview": "node scripts/make-preview.mjs",
     "compat": "node scripts/check-compat.mjs",
     "compat:update": "node scripts/check-compat.mjs --update",
     "version:set": "node scripts/set-version.mjs"
