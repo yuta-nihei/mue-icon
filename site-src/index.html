@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>mue-icons プレビュー</title>
+<style>
+  :root { --bg:#fafaf9; --fg:#1c1917; --muted:#78716c; --card:#fff; --line:#e7e5e4; --icon-secondary:#d97706; --accent:#b45309; color-scheme: light dark; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#1c1917; --fg:#fafaf9; --muted:#a8a29e; --card:#292524; --line:#44403c; --accent:#fbbf24; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.6 system-ui,"Hiragino Sans","Yu Gothic",sans-serif; }
+  header, main { max-width:1040px; margin:0 auto; padding:16px; }
+  h1 { font-size:22px; margin:16px 0 4px; }
+  p.sub { color:var(--muted); margin:0 0 16px; }
+  .bar { display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-bottom:16px; }
+  input[type=search], select { font:inherit; padding:8px 10px; border:1px solid var(--line); border-radius:8px; background:var(--card); color:var(--fg); }
+  input[type=search] { flex:1 1 220px; }
+  label { display:flex; gap:6px; align-items:center; color:var(--muted); font-size:13px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(130px,1fr)); gap:12px; }
+  button.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px 8px 10px; cursor:pointer; color:var(--fg); font:inherit; display:flex; flex-direction:column; align-items:center; gap:8px; }
+  button.card:hover, button.card:focus-visible { border-color:var(--accent); outline:none; }
+  button.card svg { width:var(--size,32px); height:var(--size,32px); }
+  .name { font-size:12px; color:var(--muted); word-break:break-all; }
+  .empty { color:var(--muted); padding:32px 0; text-align:center; }
+  #toast { position:fixed; left:50%; bottom:24px; transform:translateX(-50%); background:var(--fg); color:var(--bg); padding:8px 14px; border-radius:8px; opacity:0; transition:opacity .2s; pointer-events:none; }
+  #toast.on { opacity:1; }
+</style>
+</head>
+<body>
+<!--SPRITE-->
+<header>
+  <h1>mue-icons <small style="color:var(--muted);font-weight:400">v__VERSION__</small></h1>
+  <p class="sub">日本向けアイコン。クリックでアイコン名をコピーします。</p>
+  <div class="bar">
+    <input id="q" type="search" placeholder="名前・タグで検索(例: 印鑑, bank)" aria-label="検索">
+    <select id="cat" aria-label="カテゴリ"><option value="">すべて</option></select>
+    <select id="variant" aria-label="スタイル"><option value="line">line</option><option value="duotone">duotone</option></select>
+    <label>サイズ <input id="size" type="range" min="16" max="64" value="32"></label>
+    <label>色 <input id="color" type="color" value="#44403c"></label>
+    <label>副色 <input id="sec" type="color" value="#d97706"></label>
+  </div>
+</header>
+<main><div id="grid" class="grid"></div></main>
+<div id="toast" role="status"></div>
+<script>
+const ICONS = /*ICONS_JSON*/[];
+const LABELS = { japan:'日本の文物', document:'帳票', map:'地図記号', medical:'医療', finance:'金融' };
+const $ = (id) => document.getElementById(id);
+for (const c of [...new Set(ICONS.map((i) => i.category))]) $('cat').add(new Option(LABELS[c] ?? c, c));
+function render() {
+  const q = $('q').value.trim().toLowerCase(), cat = $('cat').value;
+  const v = $('variant').value;
+  const list = ICONS.filter((i) => (!cat || i.category === cat) &&
+    (!q || [i.name, ...i.tags.ja, ...i.tags.en].some((t) => t.toLowerCase().includes(q))));
+  $('grid').innerHTML = list.length ? list.map((i) => {
+    const vv = i.variants.includes(v) ? v : 'line';
+    return `<button class="card" data-name="${i.name}" title="${i.tags.ja.join('、')}"><svg aria-hidden="true"><use href="#mue-${i.name}-${vv}"/></svg><span class="name">${i.name}</span></button>`;
+  }).join('') : '<p class="empty">該当するアイコンがありません</p>';
+}
+function theme() {
+  const r = document.documentElement.style;
+  r.setProperty('--size', $('size').value + 'px');
+  r.setProperty('--icon-secondary', $('sec').value);
+}
+$('grid').addEventListener('click', async (e) => {
+  const b = e.target.closest('button.card'); if (!b) return;
+  try { await navigator.clipboard.writeText(b.dataset.name); } catch {}
+  const t = $('toast'); t.textContent = `${b.dataset.name} をコピーしました`; t.classList.add('on');
+  setTimeout(() => t.classList.remove('on'), 1200);
+});
+for (const id of ['q', 'cat', 'variant']) $(id).addEventListener('input', render);
+for (const id of ['size', 'sec']) $(id).addEventListener('input', theme);
+$('color').addEventListener('input', () => { $('grid').style.color = $('color').value; });
+theme(); render();
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "mue-icons-monorepo",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "lint": "node scripts/lint.mjs",
+    "build": "node scripts/lint.mjs && node scripts/build.mjs",
+    "test": "node scripts/build.mjs && node --test \"test/*.test.mjs\"",
+    "compat": "node scripts/check-compat.mjs",
+    "compat:update": "node scripts/check-compat.mjs --update",
+    "version:set": "node scripts/set-version.mjs"
+  },
+  "devDependencies": {
+    "@vue/server-renderer": "^3.5.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "vue": "^3.5.0"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "mue-icons-sprite",
+  "version": "0.1.0",
+  "description": "mue-icons の SVG スプライト(<use> 参照用)",
+  "license": "MIT",
+  "exports": {
+    "./sprite.svg": "./dist/sprite.svg",
+    "./package.json": "./package.json"
+  },
+  "files": ["dist", "README.md"],
+  "keywords": ["icons", "svg-sprite", "japan"],
+  "publishConfig": { "access": "public" }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "mue-icons",
+  "version": "0.1.0",
+  "description": "日本向けアイコン(印鑑・帳票・地図記号・医療・金融)のSVGデータと描画ヘルパー",
+  "type": "module",
+  "license": "MIT",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    "./all": { "types": "./dist/all.d.ts", "import": "./dist/all.js" },
+    "./runtime": { "types": "./dist/runtime.d.ts", "import": "./dist/runtime.js" },
+    "./icons.json": "./dist/icons.json",
+    "./package.json": "./package.json"
+  },
+  "files": ["dist", "README.md"],
+  "keywords": ["icons", "svg", "japan", "japanese", "hanko"],
+  "publishConfig": { "access": "public" }
+}

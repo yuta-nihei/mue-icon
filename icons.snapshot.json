@@ -1,0 +1,48 @@
+{
+  "icons": {
+    "hanko": [
+      "line",
+      "duotone"
+    ],
+    "torii": [
+      "line",
+      "duotone"
+    ],
+    "invoice": [
+      "line",
+      "duotone"
+    ],
+    "application": [
+      "line",
+      "duotone"
+    ],
+    "map-koban": [
+      "line",
+      "duotone"
+    ],
+    "map-post-office": [
+      "line",
+      "duotone"
+    ],
+    "map-hospital": [
+      "line",
+      "duotone"
+    ],
+    "stethoscope": [
+      "line",
+      "duotone"
+    ],
+    "prescription": [
+      "line",
+      "duotone"
+    ],
+    "bank": [
+      "line",
+      "duotone"
+    ],
+    "promissory-note": [
+      "line",
+      "duotone"
+    ]
+  }
+}

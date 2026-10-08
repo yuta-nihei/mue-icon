@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "icons": {
+    "hanko": {
+      "category": "japan",
+      "tags": { "ja": ["印鑑", "判子", "はんこ", "押印", "認印"], "en": ["seal", "stamp", "signature"] },
+      "since": "0.1.0",
+      "variants": ["line", "duotone"],
+      "aliases": ["stamp"]
+    },
+    "torii": {
+      "category": "japan",
+      "tags": { "ja": ["鳥居", "神社", "初詣"], "en": ["shrine", "gate", "shinto"] },
+      "since": "0.1.0",
+      "variants": ["line", "duotone"],
+      "aliases": []
+    },
+    "invoice": {
+      "category": "document",
+      "tags": { "ja": ["請求書", "帳票", "インボイス", "円"], "en": ["bill", "yen", "receipt"] },
+      "since": "0.1.0",
+      "variants": ["line", "duotone"],
+      "aliases": []
+    },
+    "application": {
+      "category": "document",
+      "tags": { "ja": ["申請書", "申込", "届出", "承認"], "en": ["form", "approval", "request"] },
+      "since": "0.1.0",
+      "variants": ["line", "duotone"],
+      "aliases": []
+    },
+    "map-koban": {
+      "category": "map",
+      "tags": { "ja": ["交番", "警察", "地図記号"], "en": ["police box", "map symbol"] },
+      "since": "0.1.0",
+      "variants": ["line", "duotone"],
+      "aliases": []
+    },
+    "map-post-office": {
+      "category": "map",
+      "tags": { "ja": ["郵便局", "郵便", "地図記号"], "en": ["post office", "mail", "map symbol"] },
+      "since": "0.1.0",
+      "variants": ["line", "duotone"],
+      "aliases": []
+    },
+    "map-hospital": {
+      "category": "map",
+      "tags": { "ja": ["病院", "医療", "地図記号"], "en": ["hospital", "clinic", "map symbol"] },
+      "since": "0.1.0",
+      "variants": ["line", "duotone"],
+      "aliases": []
+    },
+    "stethoscope": {
+      "category": "medical",
+      "tags": { "ja": ["聴診器", "診察", "医師"], "en": ["doctor", "checkup", "clinic"] },
+      "since": "0.1.0",
+      "variants": ["line", "duotone"],
+      "aliases": []
+    },
+    "prescription": {
+      "category": "medical",
+      "tags": { "ja": ["処方箋", "薬", "調剤"], "en": ["rx", "medicine", "pharmacy"] },
+      "since": "0.1.0",
+      "variants": ["line", "duotone"],
+      "aliases": []
+    },
+    "bank": {
+      "category": "finance",
+      "tags": { "ja": ["銀行", "金融機関", "振込"], "en": ["finance", "transfer", "institution"] },
+      "since": "0.1.0",
+      "variants": ["line", "duotone"],
+      "aliases": []
+    },
+    "promissory-note": {
+      "category": "finance",
+      "tags": { "ja": ["手形", "小切手", "証書"], "en": ["bill of exchange", "cheque", "note"] },
+      "since": "0.1.0",
+      "variants": ["line", "duotone"],
+      "aliases": []
+    }
+  }
+}
