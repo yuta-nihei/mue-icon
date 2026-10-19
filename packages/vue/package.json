@@ -4,15 +4,41 @@
   "description": "mue-icons の Vue 3 コンポーネント",
   "type": "module",
   "license": "MIT",
+  "author": "yuta-nihei",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuta-nihei/mue.git",
+    "directory": "packages/vue"
+  },
+  "homepage": "https://github.com/yuta-nihei/mue#readme",
+  "bugs": {
+    "url": "https://github.com/yuta-nihei/mue/issues"
+  },
   "sideEffects": false,
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
     "./package.json": "./package.json"
   },
-  "files": ["dist", "README.md"],
-  "peerDependencies": { "vue": "^3.3.0" },
-  "keywords": ["icons", "vue", "svg", "japan"],
-  "publishConfig": { "access": "public" }
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "vue": "^3.3.0"
+  },
+  "keywords": [
+    "icons",
+    "vue",
+    "svg",
+    "japan"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
 }

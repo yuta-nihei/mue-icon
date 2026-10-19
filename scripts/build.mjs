@@ -24,6 +24,9 @@ const json = (v) => JSON.stringify(v);
 
 for (const pkg of ['core', 'react', 'vue', 'sprite']) rmSync(join(ROOT, 'packages', pkg, 'dist'), { recursive: true, force: true });
 
+// npm 配布物に LICENSE を同梱する(コピーは git 管理外)
+for (const pkg of ['core', 'react', 'vue', 'sprite']) copy('LICENSE', `packages/${pkg}/LICENSE`);
+
 // 1) 名前(aliases を含む)ごとの export 一覧
 const exportsList = icons.flatMap((i) => [
   { id: toCamel(i.name), target: i },

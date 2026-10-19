@@ -3,11 +3,31 @@
   "version": "0.1.0",
   "description": "mue-icons の SVG スプライト(<use> 参照用)",
   "license": "MIT",
+  "author": "yuta-nihei",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuta-nihei/mue.git",
+    "directory": "packages/sprite"
+  },
+  "homepage": "https://github.com/yuta-nihei/mue#readme",
+  "bugs": {
+    "url": "https://github.com/yuta-nihei/mue/issues"
+  },
   "exports": {
     "./sprite.svg": "./dist/sprite.svg",
     "./package.json": "./package.json"
   },
-  "files": ["dist", "README.md"],
-  "keywords": ["icons", "svg-sprite", "japan"],
-  "publishConfig": { "access": "public" }
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "keywords": [
+    "icons",
+    "svg-sprite",
+    "japan"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
 }
