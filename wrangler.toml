@@ -1,3 +1,6 @@
 name = "mue-icons"
 compatibility_date = "2026-10-01"
-pages_build_output_dir = "./site"
+
+# 静的アセットのみ配信する Worker(`pnpm build` が site/ を生成する)
+[assets]
+directory = "./site"
