@@ -11,6 +11,8 @@
 - 📦 React / Vue 3 / 素の JavaScript / SVG スプライト / WordPress に対応
 - 🌲 使うアイコンだけがバンドルされます(ツリーシェイキング対応)
 
+🔎 **[デモ・アイコン検索サイト](https://mue-web.niheiyuta1996.workers.dev/)**
+
 > 現在は **v0.1.0** です。収録数は 40 アイコンで、順次追加していきます。
 
 ![mue-icons のアイコン一覧。カテゴリごとに上段が line、下段が duotone](docs/preview.svg)
@@ -113,7 +115,7 @@ el.innerHTML = renderSvg(bank, { variant: 'line', size: 24, title: '銀行' });
 
 上の画像は `pnpm preview` で再生成できます(`docs/preview.svg`)。アイコンを追加したら更新してください。
 
-検索付きのプレビューは、リポジトリで `pnpm build` したあと `site/index.html` を開くと見られます(日本語・英語のタグで検索できます)。
+検索付きのプレビューは[ランディングページ](https://mue-web.niheiyuta1996.workers.dev/)で見られます(日本語・英語のタグで検索できます)。手元で確認する場合は、リポジトリで `pnpm build` したあと `site/index.html` を開いてください。
 
 ## 地図記号・公的マークについて
 
@@ -166,6 +168,8 @@ An SVG icon library of **icons for Japanese daily life and work**: name seals, b
 - 🌈 Colors use `currentColor`, so icons follow the text color and work well with dark mode
 - 📦 Supports React / Vue 3 / plain JavaScript / SVG sprite / WordPress
 - 🌲 Only the icons you use are bundled (tree-shakable)
+
+🔎 **[Demo & icon search site](https://mue-web.niheiyuta1996.workers.dev/)**
 
 > Currently **v0.1.0** with 40 icons. More will be added over time.
 
@@ -267,7 +271,7 @@ Place the plugin (`packages/wordpress/mue-icons`) in `wp-content/plugins/` and a
 
 The preview image can be regenerated with `pnpm preview` (`docs/preview.svg`). Update it when adding icons.
 
-For a searchable preview, run `pnpm build` and open `site/index.html` (searchable by Japanese and English tags).
+A searchable preview is available on the [landing page](https://mue-web.niheiyuta1996.workers.dev/) (searchable by Japanese and English tags). To view it locally, run `pnpm build` and open `site/index.html`.
 
 ## About map symbols and official marks
 
