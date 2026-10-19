@@ -30,7 +30,7 @@ import { HankoIcon } from 'mue-icons-vue';
 
 ## アイコン
 
-40 個(印鑑・帳票・地図記号・医療・金融・生活)。一覧・使い方・オプションは[リポジトリの README](https://github.com/yuta-nihei/mue#readme)を参照してください。
+40 個(印鑑・帳票・地図記号・医療・金融・生活)。一覧・使い方・オプションは[リポジトリの README](https://github.com/yuta-nihei/mue-icon#readme)を参照してください。
 
 色は `currentColor`、duotone の副色は CSS 変数 `--icon-secondary` で変更できます。
 
