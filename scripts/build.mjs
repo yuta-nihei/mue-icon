@@ -135,7 +135,8 @@ const tpl = readFileSync(join(ROOT, 'site-src/index.html'), 'utf8');
 const siteData = icons.map((i) => ({ name: i.name, category: i.category, tags: i.tags, variants: Object.keys(i.variants) }));
 write(
   'site/index.html',
-  tpl.replace('<!--SPRITE-->', hiddenSprite).replace('/*ICONS_JSON*/[]', json(siteData)).replace('__VERSION__', readJson('packages/core/package.json').version),
+  tpl.replace('<!--SPRITE-->', hiddenSprite).replace('/*ICONS_JSON*/[]', json(siteData)).replaceAll('__VERSION__', readJson('packages/core/package.json').version).replaceAll('__COUNT__', String(icons.length)),
 );
+copy('site-src/_headers', 'site/_headers');
 
 console.log(`build: ${icons.length} icons × ${VARIANTS.length} variants → core / react / vue / sprite / wordpress / site`);

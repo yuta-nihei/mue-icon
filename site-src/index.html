@@ -3,15 +3,67 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>mue-icons プレビュー</title>
+<title>mue-icons — 日本の暮らしと仕事のためのアイコン</title>
+<meta name="description" content="印鑑、帳票、地図記号、医療、金融、ゴミ分別など、日本で使うアイコンを集めた SVG ライブラリ。React / Vue 3 / SVG スプライト / WordPress 対応、MIT ライセンス。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="mue-icons — 日本の暮らしと仕事のためのアイコン">
+<meta property="og:description" content="はんこ、鳥居、〒、燃えるゴミ、請求書、診察券。日本で使うアイコン __COUNT__ 個を line / duotone の 2 スタイルで。">
+<meta name="theme-color" content="#b45309">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23b45309' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9.5 10V5a2.5 2.5 0 0 1 5 0v5'/%3E%3Crect x='6.5' y='10' width='11' height='5' rx='1'/%3E%3Ccircle cx='12' cy='18.5' r='1.5'/%3E%3C/svg%3E">
 <style>
-  :root { --bg:#fafaf9; --fg:#1c1917; --muted:#78716c; --card:#fff; --line:#e7e5e4; --icon-secondary:#d97706; --accent:#b45309; color-scheme: light dark; }
-  @media (prefers-color-scheme: dark) { :root { --bg:#1c1917; --fg:#fafaf9; --muted:#a8a29e; --card:#292524; --line:#44403c; --accent:#fbbf24; } }
-  * { box-sizing: border-box; }
-  body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.6 system-ui,"Hiragino Sans","Yu Gothic",sans-serif; }
-  header, main { max-width:1040px; margin:0 auto; padding:16px; }
-  h1 { font-size:22px; margin:16px 0 4px; }
-  p.sub { color:var(--muted); margin:0 0 16px; }
+  :root {
+    --bg:#fafaf9; --fg:#1c1917; --muted:#78716c; --card:#fff; --line:#e7e5e4;
+    --accent:#b45309; --accent-fg:#fff; --icon-secondary:#d97706; --code-bg:#1c1917; --code-fg:#fafaf9;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#1c1917; --fg:#fafaf9; --muted:#a8a29e; --card:#292524; --line:#44403c; --accent:#fbbf24; --accent-fg:#1c1917; --code-bg:#0c0a09; }
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.7 system-ui,"Hiragino Sans","Yu Gothic",sans-serif; }
+  a { color:var(--accent); }
+  .wrap { max-width:1040px; margin:0 auto; padding:0 16px; }
+  section { padding:56px 0; }
+  h2 { font-size:26px; line-height:1.3; margin:0 0 8px; }
+  .lead { color:var(--muted); margin:0 0 28px; }
+  code, pre { font-family:ui-monospace,"SF Mono",Menlo,monospace; font-size:14px; }
+
+  nav { display:flex; align-items:center; gap:16px; padding:14px 0; }
+  nav .brand { font-weight:700; text-decoration:none; color:var(--fg); display:flex; align-items:center; gap:8px; }
+  nav .brand svg { width:24px; height:24px; color:var(--accent); }
+  nav .sp { flex:1; }
+  nav a.link { color:var(--muted); text-decoration:none; font-size:14px; }
+  nav a.link:hover { color:var(--fg); }
+
+  .hero { padding:48px 0 32px; text-align:center; }
+  .hero h1 { font-size:clamp(28px,5vw,46px); line-height:1.25; margin:0 0 16px; letter-spacing:-.01em; }
+  .hero p { color:var(--muted); max-width:620px; margin:0 auto 28px; font-size:17px; }
+  .ctas { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+  .btn { display:inline-block; padding:10px 20px; border-radius:10px; text-decoration:none; font-weight:600; border:1px solid var(--line); color:var(--fg); background:var(--card); }
+  .btn.primary { background:var(--accent); border-color:var(--accent); color:var(--accent-fg); }
+  .showcase { display:grid; grid-template-columns:repeat(6,1fr); gap:8px; max-width:760px; margin:40px auto 0; color:var(--fg); }
+  @media (min-width:720px) { .showcase { grid-template-columns:repeat(12,1fr); } }
+  .showcase svg { width:40px; height:40px; margin:auto; }
+  .showcase span { display:grid; place-items:center; padding:12px 0; background:var(--card); border:1px solid var(--line); border-radius:12px; }
+  .showcase span:nth-child(even) { color:var(--accent); }
+
+  .features { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; }
+  .feature { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px; }
+  .feature svg { width:28px; height:28px; color:var(--accent); }
+  .feature h3 { margin:10px 0 4px; font-size:17px; }
+  .feature p { margin:0; color:var(--muted); font-size:14px; }
+
+  .tabs { display:flex; gap:4px; flex-wrap:wrap; margin-bottom:12px; }
+  .tabs button { font:inherit; font-size:14px; padding:6px 14px; border-radius:999px; border:1px solid var(--line); background:var(--card); color:var(--muted); cursor:pointer; }
+  .tabs button[aria-selected=true] { background:var(--accent); border-color:var(--accent); color:var(--accent-fg); }
+  .pane[hidden] { display:none; }
+  .code { position:relative; background:var(--code-bg); color:var(--code-fg); border-radius:12px; margin:0 0 12px; }
+  .code pre { margin:0; padding:16px 72px 16px 16px; overflow-x:auto; line-height:1.6; }
+  .code button { position:absolute; top:8px; right:8px; font:inherit; font-size:12px; padding:4px 10px; border-radius:6px; border:1px solid #57534e; background:transparent; color:#d6d3d1; cursor:pointer; }
+  .code button:hover { background:#292524; }
+  .note { color:var(--muted); font-size:14px; margin:0; }
+
   .bar { display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-bottom:16px; }
   input[type=search], select { font:inherit; padding:8px 10px; border:1px solid var(--line); border-radius:8px; background:var(--card); color:var(--fg); }
   input[type=search] { flex:1 1 220px; }
@@ -21,35 +73,159 @@
   button.card:hover, button.card:focus-visible { border-color:var(--accent); outline:none; }
   button.card svg { width:var(--size,32px); height:var(--size,32px); }
   .name { font-size:12px; color:var(--muted); word-break:break-all; }
-  .empty { color:var(--muted); padding:32px 0; text-align:center; }
+  .empty { color:var(--muted); padding:32px 0; text-align:center; grid-column:1/-1; }
+
+  footer { border-top:1px solid var(--line); padding:28px 0 40px; color:var(--muted); font-size:14px; }
+  footer .wrap { display:flex; flex-wrap:wrap; gap:8px 20px; }
+  footer .sp { flex:1; }
   #toast { position:fixed; left:50%; bottom:24px; transform:translateX(-50%); background:var(--fg); color:var(--bg); padding:8px 14px; border-radius:8px; opacity:0; transition:opacity .2s; pointer-events:none; }
   #toast.on { opacity:1; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } #toast { transition:none; } }
+  @media (max-width:560px) { nav a.link.hide-sm { display:none; } section { padding:40px 0; } }
 </style>
 </head>
 <body>
 <!--SPRITE-->
-<header>
-  <h1>mue-icons <small style="color:var(--muted);font-weight:400">v__VERSION__</small></h1>
-  <p class="sub">日本向けアイコン。クリックでアイコン名をコピーします。</p>
-  <div class="bar">
-    <input id="q" type="search" placeholder="名前・タグで検索(例: 印鑑, bank)" aria-label="検索">
-    <select id="cat" aria-label="カテゴリ"><option value="">すべて</option></select>
-    <select id="variant" aria-label="スタイル"><option value="line">line</option><option value="duotone">duotone</option></select>
-    <label>サイズ <input id="size" type="range" min="16" max="64" value="32"></label>
-    <label>色 <input id="color" type="color" value="#44403c"></label>
-    <label>副色 <input id="sec" type="color" value="#d97706"></label>
+<div class="wrap">
+  <nav>
+    <a class="brand" href="#"><svg aria-hidden="true"><use href="#mue-hanko-duotone"/></svg>mue-icons</a>
+    <span class="sp"></span>
+    <a class="link hide-sm" href="#install">インストール</a>
+    <a class="link hide-sm" href="#gallery">アイコン一覧</a>
+    <a class="link" href="https://github.com/yuta-nihei/mue-icon">GitHub</a>
+  </nav>
+
+  <header class="hero">
+    <h1>日本の暮らしと仕事のための<br>アイコンライブラリ</h1>
+    <p>はんこ、鳥居、〒、燃えるゴミ、請求書、診察券。日本で使うアイコン __COUNT__ 個を、そろったデザインで。MIT ライセンスで商用利用もできます。</p>
+    <div class="ctas">
+      <a class="btn primary" href="#install">使い始める</a>
+      <a class="btn" href="#gallery">アイコンを探す</a>
+    </div>
+    <div class="showcase" id="showcase" aria-hidden="true"></div>
+  </header>
+
+  <section id="features">
+    <h2>特長</h2>
+    <p class="lead">日本の現場で必要になるのに、海外のアイコンセットには少ないものを中心に集めています。</p>
+    <div class="features">
+      <div class="feature"><svg aria-hidden="true"><use href="#mue-hanko-line"/></svg><h3>日本ならではのモチーフ</h3><p>印鑑、鳥居、お守り、〒、請求書、診察券、ゴミ分別、地図記号など。</p></div>
+      <div class="feature"><svg aria-hidden="true"><use href="#mue-invoice-duotone"/></svg><h3>line と duotone</h3><p>線のみの line と、面に色がのる duotone の 2 スタイル。副色は CSS 変数で変えられます。</p></div>
+      <div class="feature"><svg aria-hidden="true"><use href="#mue-sakura-line"/></svg><h3>色は currentColor</h3><p>文字と同じ色で表示され、ダークモードやテーマ切り替えにもそのまま対応します。</p></div>
+      <div class="feature"><svg aria-hidden="true"><use href="#mue-wallet-line"/></svg><h3>使う分だけバンドル</h3><p>ESM とツリーシェイキングに対応。import したアイコンだけが含まれます。</p></div>
+      <div class="feature"><svg aria-hidden="true"><use href="#mue-application-duotone"/></svg><h3>主要な環境に対応</h3><p>React、Vue 3、素の JavaScript、SVG スプライト、WordPress のショートコード。</p></div>
+      <div class="feature"><svg aria-hidden="true"><use href="#mue-certificate-line"/></svg><h3>アクセシビリティ</h3><p><code>title</code> を付けると読み上げ対象に、付けなければ装飾として扱われます。</p></div>
+    </div>
+  </section>
+
+  <section id="install">
+    <h2>インストール</h2>
+    <p class="lead">使う環境に合わせて、どれか 1 つを入れます。</p>
+    <div class="tabs" role="tablist" aria-label="環境">
+      <button role="tab" aria-selected="true" data-tab="react">React</button>
+      <button role="tab" aria-selected="false" data-tab="vue">Vue 3</button>
+      <button role="tab" aria-selected="false" data-tab="js">JavaScript</button>
+      <button role="tab" aria-selected="false" data-tab="sprite">SVG スプライト</button>
+      <button role="tab" aria-selected="false" data-tab="wp">WordPress</button>
+    </div>
+
+    <div class="pane" data-pane="react">
+      <div class="code"><pre>npm install mue-icons-react</pre><button type="button">コピー</button></div>
+      <div class="code"><pre>import { HankoIcon, ToriiIcon } from 'mue-icons-react';
+
+&lt;HankoIcon size={32} variant="duotone" title="印鑑" /&gt;
+&lt;ToriiIcon /&gt;</pre><button type="button">コピー</button></div>
+      <p class="note">コンポーネント名は「アイコン名をパスカルケースにして <code>Icon</code> を付けたもの」です。React 17 以上。</p>
+    </div>
+    <div class="pane" data-pane="vue" hidden>
+      <div class="code"><pre>npm install mue-icons-vue</pre><button type="button">コピー</button></div>
+      <div class="code"><pre>&lt;script setup&gt;
+import { InvoiceIcon } from 'mue-icons-vue';
+&lt;/script&gt;
+
+&lt;template&gt;
+  &lt;InvoiceIcon :size="24" variant="duotone" title="請求書" /&gt;
+&lt;/template&gt;</pre><button type="button">コピー</button></div>
+    </div>
+    <div class="pane" data-pane="js" hidden>
+      <div class="code"><pre>npm install mue-icons</pre><button type="button">コピー</button></div>
+      <div class="code"><pre>import { bank } from 'mue-icons';
+import { renderSvg } from 'mue-icons/runtime';
+
+el.innerHTML = renderSvg(bank, { variant: 'line', size: 24, title: '銀行' });</pre><button type="button">コピー</button></div>
+    </div>
+    <div class="pane" data-pane="sprite" hidden>
+      <div class="code"><pre>npm install mue-icons-sprite</pre><button type="button">コピー</button></div>
+      <div class="code"><pre>&lt;svg width="24" height="24" aria-hidden="true"&gt;
+  &lt;use href="/sprite.svg#mue-hanko-line" /&gt;
+&lt;/svg&gt;</pre><button type="button">コピー</button></div>
+      <p class="note"><code>mue-icons-sprite/sprite.svg</code> を配信ディレクトリにコピーして使います。ID は <code>mue-&lt;アイコン名&gt;-&lt;line|duotone&gt;</code> です。</p>
+    </div>
+    <div class="pane" data-pane="wp" hidden>
+      <p class="note" style="margin-bottom:12px">プラグイン(<code>packages/wordpress/mue-icons</code>)を <code>wp-content/plugins/</code> に置いて有効化します。</p>
+      <div class="code"><pre>[mue_icon name="hanko" variant="duotone" size="32" label="印鑑"]</pre><button type="button">コピー</button></div>
+    </div>
+
+    <h3 style="margin:28px 0 8px">色の変え方</h3>
+    <div class="code"><pre>.icon { color: #1d4ed8; --icon-secondary: #f59e0b; }</pre><button type="button">コピー</button></div>
+  </section>
+
+  <section id="gallery">
+    <h2>アイコン一覧</h2>
+    <p class="lead">クリックでアイコン名をコピーします。日本語・英語のタグで検索できます。</p>
+    <div class="bar">
+      <input id="q" type="search" placeholder="名前・タグで検索(例: 印鑑, bank)" aria-label="検索">
+      <select id="cat" aria-label="カテゴリ"><option value="">すべて</option></select>
+      <select id="variant" aria-label="スタイル"><option value="line">line</option><option value="duotone">duotone</option></select>
+      <label>サイズ <input id="size" type="range" min="16" max="64" value="32"></label>
+      <label>色 <input id="color" type="color" value="#44403c"></label>
+      <label>副色 <input id="sec" type="color" value="#d97706"></label>
+    </div>
+    <div id="grid" class="grid"></div>
+    <p class="note" style="margin-top:20px"><code>map-*</code> やゴミ分別・プラマークなどは、着想を得た独自デザインです。公的機関が定める記号の図形データをそのまま転載したものではありません。</p>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>mue-icons v__VERSION__ · MIT License</span>
+    <span class="sp"></span>
+    <a href="https://github.com/yuta-nihei/mue-icon">GitHub</a>
+    <a href="https://www.npmjs.com/package/mue-icons">npm</a>
+    <a href="https://github.com/yuta-nihei/mue-icon/blob/main/CONTRIBUTING.md">コントリビュート</a>
   </div>
-</header>
-<main><div id="grid" class="grid"></div></main>
+</footer>
 <div id="toast" role="status"></div>
+
 <script>
 const ICONS = /*ICONS_JSON*/[];
 const LABELS = { japan:'日本の文物', document:'帳票', map:'地図記号', medical:'医療', finance:'金融', life:'生活' };
 const $ = (id) => document.getElementById(id);
+const toast = (msg) => {
+  const t = $('toast'); t.textContent = msg; t.classList.add('on');
+  clearTimeout(toast.id); toast.id = setTimeout(() => t.classList.remove('on'), 1200);
+};
+const copy = async (text, msg) => { try { await navigator.clipboard.writeText(text); toast(msg); } catch { toast('コピーできませんでした'); } };
+
+// ヒーローの見本
+const SHOW = ['hanko','torii','postal-code','trash-burnable','invoice','karte','bank','map-koban','sakura','omamori','wallet','fuji'];
+$('showcase').innerHTML = SHOW.filter((n) => ICONS.some((i) => i.name === n))
+  .map((n, k) => `<span><svg><use href="#mue-${n}-${k % 2 ? 'duotone' : 'line'}"/></svg></span>`).join('');
+
+// インストール タブ
+const tabs = [...document.querySelectorAll('.tabs button')];
+tabs.forEach((b) => b.addEventListener('click', () => {
+  tabs.forEach((x) => x.setAttribute('aria-selected', String(x === b)));
+  document.querySelectorAll('.pane').forEach((p) => { p.hidden = p.dataset.pane !== b.dataset.tab; });
+}));
+document.querySelectorAll('.code button').forEach((b) => b.addEventListener('click', () => {
+  copy(b.parentElement.querySelector('pre').textContent, 'コピーしました');
+}));
+
+// ギャラリー
 for (const c of [...new Set(ICONS.map((i) => i.category))]) $('cat').add(new Option(LABELS[c] ?? c, c));
 function render() {
-  const q = $('q').value.trim().toLowerCase(), cat = $('cat').value;
-  const v = $('variant').value;
+  const q = $('q').value.trim().toLowerCase(), cat = $('cat').value, v = $('variant').value;
   const list = ICONS.filter((i) => (!cat || i.category === cat) &&
     (!q || [i.name, ...i.tags.ja, ...i.tags.en].some((t) => t.toLowerCase().includes(q))));
   $('grid').innerHTML = list.length ? list.map((i) => {
@@ -62,11 +238,8 @@ function theme() {
   r.setProperty('--size', $('size').value + 'px');
   r.setProperty('--icon-secondary', $('sec').value);
 }
-$('grid').addEventListener('click', async (e) => {
-  const b = e.target.closest('button.card'); if (!b) return;
-  try { await navigator.clipboard.writeText(b.dataset.name); } catch {}
-  const t = $('toast'); t.textContent = `${b.dataset.name} をコピーしました`; t.classList.add('on');
-  setTimeout(() => t.classList.remove('on'), 1200);
+$('grid').addEventListener('click', (e) => {
+  const b = e.target.closest('button.card'); if (b) copy(b.dataset.name, `${b.dataset.name} をコピーしました`);
 });
 for (const id of ['q', 'cat', 'variant']) $(id).addEventListener('input', render);
 for (const id of ['size', 'sec']) $(id).addEventListener('input', theme);
